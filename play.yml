@@ -18,6 +18,3 @@
     - name: ustanovka sql
       apt: name=php-mysql
       
-    - name: restart time
-      systemd: timesyncd
-      state: reloaded
