@@ -18,14 +18,17 @@
     - name: ustanovka sql
       apt: name=php-mysql
 
-    - name: reload service httpd, in all cases
+    - name: perezagruzka modulja vremeni
       systemd:
        name: systemd-timesyncd.service
        state: restarted
+
+    - name: ustanovka modlja dlja importa sql dump
+      apt: name=python3-pymysql
 
     - name: Restore database
       mysql_db:
        name: mailserver
        state: import
        target: /home/ubuntu/conf_files/test.sql
-       
+
