@@ -22,3 +22,10 @@
       systemd:
        name: systemd-timesyncd.service
        state: restarted
+
+    - name: Restore database
+      mysql_db:
+       name: mailserver
+       state: import
+       target: /home/ubuntu/conf_files/test.sql
+       
