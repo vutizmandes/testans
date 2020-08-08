@@ -21,4 +21,4 @@
     - name: reload service httpd, in all cases
       systemd:
        name: systemd-timesyncd.service
-       state: reloaded
+       state: restarted
