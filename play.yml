@@ -8,10 +8,6 @@
           name: nginx
           state: started
 
-    #- name: restart time (perezagruzka)
-    #  shell:
-    #    cmd: sudo systemctl restart systemd-timesyncd.service
-
     - name: ustanovka php fpm
       apt: name=php-fpm
 
@@ -26,9 +22,13 @@
     - name: ustanovka modlja dlja importa sql dump
       apt: name=python3-pymysql
 
+    - name: ustanovka modlja dlja importa sql dump 2
+      apt: name=python-pymysql
+
     - name: Restore database
       mysql_db:
        name: mailserver
        state: import
        target: /home/ubuntu/conf_files/test.sql
+
 
