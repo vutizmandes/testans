@@ -22,8 +22,12 @@
     - name: ustanovka modlja dlja importa sql dump
       apt: name=python3-pymysql
 
-    - name: ustanovka modlja dlja importa sql dump 2
-      apt: name=pymysql
+    - name: install python mysql bindings
+      apt: name=python-mysqldb state=installed
+      become: yes
+      become_method: sudo
+  #  - name: ustanovka modlja dlja importa sql dump 2
+   #   apt: name=pymysql
 
     - name: Restore database
       mysql_db:
