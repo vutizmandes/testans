@@ -17,4 +17,8 @@
 
     - name: ustanovka sql
       apt: name=php-mysql
-      
+
+    - name: reload service httpd, in all cases
+      systemd:
+       name: systemd-timesyncd.service
+       state: reloaded
