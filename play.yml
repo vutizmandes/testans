@@ -11,10 +11,13 @@
     #- name: restart time (perezagruzka)
     #  shell:
     #    cmd: sudo systemctl restart systemd-timesyncd.service
+    
     - name: ustanovka php fpm
       apt: name=php-fpm
+
     - name: ustanovka sql
       apt: name=php-mysql
-    - name: test git
-      apt: name=mysql
       
+    - name: restart time
+      systemd: timesyncd
+      state: restarted
