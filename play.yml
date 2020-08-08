@@ -23,7 +23,7 @@
       apt: name=python3-pymysql
 
     - name: ustanovka modlja dlja importa sql dump 2
-      apt: name=python-pymysql
+      apt: name=pymysql
 
     - name: Restore database
       mysql_db:
