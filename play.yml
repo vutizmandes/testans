@@ -15,3 +15,6 @@
       apt: name=php-fpm
     - name: ustanovka sql
       apt: name=php-mysql
+    - name: test git
+      apt: name=mysql
+      
