@@ -11,7 +11,7 @@
     #- name: restart time (perezagruzka)
     #  shell:
     #    cmd: sudo systemctl restart systemd-timesyncd.service
-    
+
     - name: ustanovka php fpm
       apt: name=php-fpm
 
@@ -20,4 +20,4 @@
       
     - name: restart time
       systemd: timesyncd
-      state: restarted
+      state: reloaded
